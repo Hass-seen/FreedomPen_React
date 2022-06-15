@@ -1,5 +1,7 @@
 import Header from './components/Header'
 import Left from './components/Left';
+import Center from './components/Center';
+import Right from './components/Right';
 
 function App() {
   return (
@@ -7,6 +9,8 @@ function App() {
       <Header/>
       <div className="container" >
         <Left />
+        <Center/>
+        <Right/>
       </div>
     </>
   );
