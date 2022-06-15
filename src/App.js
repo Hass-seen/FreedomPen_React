@@ -2,6 +2,7 @@ import Header from './components/Header'
 import Left from './components/Left';
 import Center from './components/Center';
 import Right from './components/Right';
+import { useState } from 'react';
 
 function App() {
   return (

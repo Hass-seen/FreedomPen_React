@@ -4,6 +4,10 @@ import refresh from './refresh.png'
 import upload from './upload.png'
 
 function Center() {
+
+    const pop=() =>{
+        console.log("click")
+    }
   return (
     <div className="center" style={{ overflowX: "hidden"}}>
 	<div>
@@ -12,12 +16,12 @@ function Center() {
 			<ul >
 				<li style={{cursor: "pointer"}}><img src={zoom} id="zoom"/></li>
 				<li><label style={{cursor: "pointer"}}><img src={refresh} id="refresh"/></label></li>
-				<li style={{cursor: "pointer"}} ><img src={upload} id="upload"/></li>
+				<li style={{cursor: "pointer"}} onClick={pop} ><img src={upload} id="upload"/></li>
 			</ul>
 
 </form>
 	</div>
-		<div class="posts">
+		<div className="posts">
   
    </div>
 
