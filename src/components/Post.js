@@ -6,10 +6,10 @@ function Post() {
 
     <div className="feed">
 		<a href="" style={{color: "black"}}><h2></h2></a>
-		<h6></h6> <br/>
-		  <h4></h4>
-		  <div id="wrapper"><p></p></div><br/><br/>
-		  <a href="" target=""><img src={pdf} style={{height:"40px" ,
+		<h6>name</h6> <br/>
+		  <h4>post.sub</h4>
+		  <div id="wrapper"><p>post.body</p></div><br/><br/>
+		  <a href="post.file" target=""><img src={pdf} style={{height:"40px" ,
 		   width: "40px"}}/></a>
 		  <a href="" id="" style={{borderRadius: "10px", border:"2px black solid", padding:"2px 4px", backgroundColor:" darkgray"}} >
             <span>likes</span>
