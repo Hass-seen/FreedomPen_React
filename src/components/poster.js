@@ -2,7 +2,7 @@ import React from 'react'
 import pdf  from "./pdf.png";
 import { useState } from 'react';
 
-function Poster({onadd}) {
+function Poster({onadd, pop}) {
     const [sub, setsub]= useState("");
     const [body, setbody]= useState("");
     const [file, setfile]= useState("");
@@ -29,7 +29,7 @@ function Poster({onadd}) {
 	       <textarea id="postbody" name="body"  rows="4" cols="50" value={body} onChange={(e)=>setbody(e.target.value)} style={{width: "100%"}} required></textarea><br/>
 	          <input type="file" id="file" name="pdf" accept=".pdf" style={{display: "none"}} />
             <label style={{ cursor: "pointer", borderRadius: "10px"}}  > <img src={pdf} style={{height: "30px", width: "30px"}}/> </label> <br/><br/>
-	       <input type="submit" name="pos" value="post"/> <h6 id="alert">pleas fill both inputs*</h6> <label id="cancle">Cancle</label>
+	       <input type="submit" name="pos" value="post"/> <h6 id="alert">pleas fill both inputs*</h6> <label id="cancle" onClick={pop}>Cancle</label>
 
         </form>
     </div>

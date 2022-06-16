@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function App() {
 const [showposter,setshowposter]= useState(false);
-const [posts , setposts]= useState("")
+const [posts , setposts]= useState([])
 
 
 
@@ -15,7 +15,8 @@ const [posts , setposts]= useState("")
 const addpost=(post) =>{
    const id= Math.floor(Math.random()*100000)+1;
    const newpost={id,...post};
-   setposts([...posts,newpost]);
+   setposts([newpost,...posts]);
+   pop()
 }
 
 const pop=() =>{
@@ -25,7 +26,7 @@ const pop=() =>{
 
   return (
     <>
-      {showposter && <Poster onadd={addpost}/>}
+      {showposter && <Poster onadd={addpost} pop={pop}/>}
       <Header/>
       <div className="container" >
         <Left />

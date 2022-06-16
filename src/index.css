@@ -479,9 +479,7 @@ top: 12vh;
 .bio{
 width: 100%;
 order: 3;
-margin-top: 2%;
-margin-left: 10%;
-margin-right: 2%;
+padding-left: 40%;
 }
 
 
@@ -506,6 +504,7 @@ margin-left: 0;
 .personal{
 display: flex;
 flex-direction: row;
+margin-top: 3%;
 
 }
 .center{
