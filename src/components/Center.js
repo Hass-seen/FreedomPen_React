@@ -5,7 +5,7 @@ import upload from './upload.png'
 import pdf from './pdf.png'
 import Post from './Post'
 
-function Center({pop, posts, zooming, magnify, like}) {
+function Center({pop, posts, zooming, magnify, like, delet}) {
 
   return (
     <div className="center" style={{ overflowX: "hidden"}}>
@@ -21,7 +21,7 @@ function Center({pop, posts, zooming, magnify, like}) {
 </form>
 	</div>
 		<div className={magnify ? "posts": "posts-big"}>
-       {posts.map((post)=>(<Post key={post.id} post={post} like={like}/> ))}
+       {posts.map((post)=>(<Post key={post.id} post={post} like={like} delet={delet}/> ))}
   
    </div>
 

@@ -34,14 +34,24 @@ const addpost=(post) =>{
 
 
 const trending=()=>{
-    
+  setposts(posts.sort(function(post1,post2){
+   const x=post1.likes
+   const y=post2.likes
+    if(x<y) {return -1}
+    if(x>y) {return 1}
+    return 0
+  })
+  )
+  console.log("trend")
 }
 
 
 
 const delet=(id)=>{
   setposts(posts.filter((post)=> post.id !== id))
+  setpostlist(posts)
 }
+
 
 const like=(id)=>{
     const x=[]
@@ -52,9 +62,11 @@ const like=(id)=>{
         post.likes--
       }
       x.push(post)
-      setlikedposts(likedposts.filter((likedpost)=> likedpost !== id))
+  
   })
+    setlikedposts(likedposts.filter((likedpost)=> likedpost !== id))
     setposts(x)
+    setpostlist(posts)
 
   }else{
 
@@ -66,6 +78,7 @@ const like=(id)=>{
 })
   setposts(x)
   setlikedposts([...likedposts, id])}
+  setpostlist(posts)
 }
 
 
@@ -76,14 +89,15 @@ const pop=() =>{
 
 }
 
+
   return (
     <>
       {showposter && <Poster onadd={addpost} pop={pop}/>}
       <Header/>
       <div className="container" >
         <Left />
-        <Center   zooming={zooming} magnify={magnify} like={like}  pop={pop} posts={posts}/>
-        <Right/>
+        <Center   zooming={zooming} magnify={magnify} like={like} delet={delet} pop={pop}  posts={posts}/>
+        <Right trending={trending}/>
       </div>
     </>
   );
