@@ -6,6 +6,7 @@ function Poster({onadd, pop}) {
     const [sub, setsub]= useState("");
     const [body, setbody]= useState("");
     const [file, setfile]= useState("");
+  
 
    const onsubmit=(e)=>{
     e.preventDefault()
