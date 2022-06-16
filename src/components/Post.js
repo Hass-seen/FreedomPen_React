@@ -1,7 +1,7 @@
 import React from 'react'
 import pdf from "./pdf.png"
 
-function Post({post}) {
+function Post({post ,like}) {
   return (
 
     <div className="feed">
@@ -11,9 +11,9 @@ function Post({post}) {
 		  <div id="wrapper"><p>{post.body}</p></div><br/><br/>
 		  <a href={post.file} target=""><img src={pdf} style={{height:"40px" ,
 		   width: "40px"}}/></a>
-		  <a href="" id="" style={{borderRadius: "10px", border:"2px black solid", padding:"2px 4px", backgroundColor:" darkgray"}} >
+		  <p  style={{borderRadius: "10px", border:"2px black solid", width:"fit-content", padding:"2px 4px", backgroundColor:" darkgray"}} >
             <span>{post.likes}</span>
-		  <span style={{marginLeft:"10px"}}>upvote</span></a>
+		  <span style={{marginLeft:"10px"}} onClick={()=>like(post.id)}>upvote</span></p>
           <a href="" id="" style={{borderRadius: "10px", border:"2px black solid", padding:"2px 4px", backgroundColor: "darkgray", marginLeft: "70%", color: "red"}}>Delete</a>
 		  </div>
         

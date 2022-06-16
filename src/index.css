@@ -36,9 +36,9 @@ text-decoration: none;
 
 body{
 size: 100%;
-/* background-image: url(home.jpg);
+ background-image: url(home.jpg);
 background-size: cover;
-background-repeat: no-repeat; */
+background-repeat: no-repeat;
 position: relative;
 }
 
@@ -82,7 +82,9 @@ display: flex;
 justify-content: space-around;
 
 }
-
+.posts-big{
+	font-size:large;
+}
 
 .left{
 border: gray 10px solid;
@@ -108,6 +110,7 @@ border-radius: 10px;
 
 
 }
+
 .pdfs{
 overflow-y: auto hidden;
 }

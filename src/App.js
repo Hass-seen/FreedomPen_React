@@ -9,6 +9,15 @@ function App() {
 const [showposter,setshowposter]= useState(false);
 const [posts , setposts]= useState([])
 const [postlist, setpostlist]=  useState([])
+const [magnify, setmagnify] = useState(false);
+const [likedposts, setlikedposts]=useState([])
+
+
+
+const zooming =()=>{
+  setmagnify(!magnify)
+  console.log(magnify)
+}
 
 
 
@@ -22,13 +31,49 @@ const addpost=(post) =>{
    pop()
 }
 
+
+
 const trending=()=>{
     
 }
 
+
+
+const delet=(id)=>{
+  setposts(posts.filter((post)=> post.id !== id))
+}
+
+const like=(id)=>{
+    const x=[]
+  if(likedposts.includes(id)){
+    
+    posts.forEach(function (post) {
+      if(post.id===id){
+        post.likes--
+      }
+      x.push(post)
+      setlikedposts(likedposts.filter((likedpost)=> likedpost !== id))
+  })
+    setposts(x)
+
+  }else{
+
+  posts.forEach(function (post) {
+    if(post.id===id){
+      post.likes++
+    }
+    x.push(post)
+})
+  setposts(x)
+  setlikedposts([...likedposts, id])}
+}
+
+
+
+
 const pop=() =>{
   setshowposter(!showposter)
-  console.log("click")
+
 }
 
   return (
@@ -37,7 +82,7 @@ const pop=() =>{
       <Header/>
       <div className="container" >
         <Left />
-        <Center pop={pop} posts={posts}/>
+        <Center   zooming={zooming} magnify={magnify} like={like}  pop={pop} posts={posts}/>
         <Right/>
       </div>
     </>
