@@ -52,6 +52,10 @@ const delet=(id)=>{
   setpostlist(posts)
 }
 
+const search=(word)=>{
+  setposts(posts.filter((post)=> post.body.includes(word)))
+}
+
 
 const like=(id)=>{
     const x=[]
@@ -89,6 +93,11 @@ const pop=() =>{
 
 }
 
+const refresh=()=>{
+  setposts(postlist)
+  console.log("refed")
+}
+
 
   return (
     <>
@@ -96,8 +105,8 @@ const pop=() =>{
       <Header/>
       <div className="container" >
         <Left />
-        <Center   zooming={zooming} magnify={magnify} like={like} delet={delet} pop={pop}  posts={posts}/>
-        <Right trending={trending}/>
+        <Center   zooming={zooming} magnify={magnify} refre={refresh} like={like} delet={delet} pop={pop}  posts={posts}/>
+        <Right trending={trending} search={search}/>
       </div>
     </>
   );
