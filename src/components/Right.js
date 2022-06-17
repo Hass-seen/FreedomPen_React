@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-function Right({trending, search}) {
+function Right({trending, search, edit}) {
 		const [word,setword]= useState("")
 
 		const go=(e)=>{
@@ -22,7 +22,7 @@ function Right({trending, search}) {
              </div>
 
 			<li className="sub"><label  style={{cursor: "pointer"}}>My Posts</label></li>
-			<li className="sub"><label  style={{cursor: "pointer"}}>Edit Profile</label></li>
+			<li className="sub" onClick={edit}><label  style={{cursor: "pointer"}}>Edit Profile</label></li>
 			
 			</form>
 

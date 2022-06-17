@@ -3,14 +3,22 @@ import Left from './components/Left';
 import Center from './components/Center';
 import Right from './components/Right';
 import Poster from './components/Poster';
+import pfp from './components/pfp.png'
 import { useState } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Editprofile from './components/Editprofile';
 
 function App() {
-const [showposter,setshowposter]= useState(false);
+const [showedit,setshowdedit] = useState(false);
+const [showposter,setshowposter]= useState(false)
 const [posts , setposts]= useState([])
 const [postlist, setpostlist]=  useState([])
-const [magnify, setmagnify] = useState(false);
+const [magnify, setmagnify] = useState(false)
 const [likedposts, setlikedposts]=useState([])
+const [user, setuser]=useState({id:1, email:"user@user.com", name:"Reporter Reportson",
+                                 status:"...",field:"...", bio:"..." ,pic:{pfp}})
+  
+
 
 
 
@@ -85,7 +93,9 @@ const like=(id)=>{
   setpostlist(posts)
 }
 
-
+const edit=()=>{
+  setshowdedit(!showedit)
+}
 
 
 const pop=() =>{
@@ -102,13 +112,14 @@ const refresh=()=>{
   return (
     <>
       {showposter && <Poster onadd={addpost} pop={pop}/>}
+      {showedit && <Editprofile/>}
       <Header/>
       <div className="container" >
-        <Left />
+        <Left user={user} />
         <Center   zooming={zooming} magnify={magnify} refre={refresh} like={like} delet={delet} pop={pop}  posts={posts}/>
-        <Right trending={trending} search={search}/>
+        <Right trending={trending} search={search} edit={edit}/>
       </div>
-    </>
+      </>
   );
 }
 
