@@ -16,7 +16,7 @@ const [postlist, setpostlist]=  useState([])
 const [magnify, setmagnify] = useState(false)
 const [likedposts, setlikedposts]=useState([])
 const [user, setuser]=useState({id:1, email:"user@user.com", name:"Reporter Reportson",
-                                 status:"...",field:"...", bio:"..." ,pic:{pfp}})
+                                 status:"...",field:"...", bio:"..." ,pic:""})
   
 
 
@@ -112,7 +112,7 @@ const refresh=()=>{
   return (
     <>
       {showposter && <Poster onadd={addpost} pop={pop}/>}
-      {showedit && <Editprofile/>}
+      {showedit && <Editprofile user={user} setuser={setuser} edit={edit}/>}
       <Header/>
       <div className="container" >
         <Left user={user} />

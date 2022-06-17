@@ -25,9 +25,11 @@ function Poster({onadd, pop}) {
     <div className="poster"> 
         <form onSubmit={onsubmit}>
 	      <h4>Subject:</h4>
-	      <input type="text" name="subject" id="sub" rows="4" value={sub} onChange={(e)=>setsub(e.target.value)} cols="50" required/> <br/>
+	      <input type="text" name="subject" id="sub" rows="4" 
+        value={sub} onChange={(e)=>setsub(e.target.value)} cols="50" required/> <br/>
 	       <h4>Body:</h4>
-	       <textarea id="postbody" name="body"  rows="4" cols="50" value={body} onChange={(e)=>setbody(e.target.value)} style={{width: "100%"}} required></textarea><br/>
+	       <textarea id="postbody" name="body"  rows="4" cols="50"
+          value={body} onChange={(e)=>setbody(e.target.value)} style={{width: "100%"}} required></textarea><br/>
 	          <input type="file" id="file" name="pdf" accept=".pdf" style={{display: "none"}} />
             <label style={{ cursor: "pointer", borderRadius: "10px"}}  > <img src={pdf} style={{height: "30px", width: "30px"}}/> </label> <br/><br/>
 	       <input type="submit" name="pos" value="post"/> <h6 id="alert">pleas fill both inputs*</h6> <label id="cancle" onClick={pop}>Cancle</label>
