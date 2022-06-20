@@ -236,7 +236,8 @@ transform: translate(-50%, -20%);
 
 }
 .signe-in{
-	margin-left: 40%;
+	margin:auto;
+	padding: auto;
 	width: fit-content;
 }
 .signe-in form{
