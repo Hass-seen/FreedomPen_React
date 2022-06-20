@@ -17,7 +17,7 @@ function Post({post ,like, delet,}) {
 		  <span style={{marginLeft:"10px"}} onClick={()=>like(post.id)}>upvote</span></span>
           <span style={{borderRadius: "10px", border:"2px black solid",
 		   padding:"2px 4px", cursor:"pointer", backgroundColor: "darkgray",width:"fit-content", marginLeft: "70%",
-		    color: "red", marginBottom:"2%"}} onClick={()=>delet(post.id)}>Delete</span>
+		    color: "red"}} onClick={()=>delet(post.id)}>Delete</span>
 		  </div>
         
   )
