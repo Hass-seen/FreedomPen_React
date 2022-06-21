@@ -43,14 +43,15 @@ const addpost=(post) =>{
 
 
 const trending=()=>{
-  setposts(posts.sort(function(post1,post2){
+  var x=posts.sort(function(post1,post2){
    const x=post1.likes
    const y=post2.likes
     if(x<y) {return -1}
     if(x>y) {return 1}
     return 0
   })
-  )
+  setposts(x)
+  
   console.log("trend")
 }
 
