@@ -6,7 +6,7 @@ function Editprofile({user,setuser, edit}) {
     const [picbase64,setpicbase64]= useState(user.pic)
     const [Name,setname]=useState(user.name)
     const [status, setstatus]= useState(user.status)
-    const [field,setfield]= useState(user.filed)
+    const [field,setfield]= useState(user.field)
     const [Bio,setbio]= useState(user.bio)
 
     const onchange=(e)=>{
